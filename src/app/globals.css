@@ -92,7 +92,8 @@ b {
 .split-right {
   flex: 4;
   padding: 20px;
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
 }
 
 .click {

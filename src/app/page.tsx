@@ -7,10 +7,47 @@ import { CoordinateRegion, Marker, Map } from "mapkit-react";
 import Lightbox from "yet-another-react-lightbox";
 import "yet-another-react-lightbox/styles.css";
 
-// 9 photos of https://source.unsplash.com/random/500x360?nature
-const photosOne = ["https://source.unsplash.com/random/500x360?nature", "https://source.unsplash.com/random/500x360?nature", "https://source.unsplash.com/random/500x360?nature"];
-const photosTwo = ["https://source.unsplash.com/random/500x360?nature", "https://source.unsplash.com/random/500x360?nature", "https://source.unsplash.com/random/500x360?nature"];
-const photosThree = ["https://source.unsplash.com/random/500x360?nature", "https://source.unsplash.com/random/500x360?nature", "https://source.unsplash.com/random/500x360?nature"];
+// Arrays of 3 photos each (or 2), total 24
+const photosOne = [
+  '/CW/photo1.JPG',
+  '/CW/photo2.JPG',
+  '/CW/photo3.JPG',
+];
+const photosTwo = [
+  '/CW/photo4.JPG',
+  '/CW/photo5.JPG',
+  '/CW/photo6.JPG',
+];
+const photosThree = [
+  '/CW/photo7.JPG',
+  '/CW/photo8.JPG',
+  '/CW/photo9.JPG',
+];
+const photosFour = [
+  '/CW/photo10.JPG',
+  '/CW/photo11.JPG',
+  '/CW/photo12.JPG',
+];
+const photosFive = [
+  '/CW/photo13.JPG',
+  '/CW/photo14.JPG',
+  '/CW/photo15.JPG',
+];
+const photosSix = [
+  '/CW/photo16.JPG',
+  '/CW/photo17.JPG',
+  '/CW/photo18.JPG',
+];
+const photosSeven = [
+  '/CW/photo19.JPG',
+  '/CW/photo20.JPG',
+  '/CW/photo21.JPG',
+];
+const photosEight = [
+  '/CW/photo22.JPG',
+  '/CW/photo23.JPG',
+  '/CW/photo24.JPG',
+];
 
 function Gap({ height = 20 }: { height?: number }) {
   return <div className="gap" style={{ height: height }} />;
@@ -35,15 +72,15 @@ function Icon({ icon }: { icon: string }) {
 
 export default function Home() {
 
-  const [lbOpen, setLbOpen] = useState(false);
+  const [indexlb, setIndexlb] = useState(-1);
 
   function closeMenu() {
     document.querySelector('.menu')?.classList.remove('open');
   }
-  function Card({ image, title, clickOpenLightbox=false }: { image: string, title: string, clickOpenLightbox?: boolean }) {
+  function Card({ image, title, clickOpenLightbox=false, id=-1 }: { image: string, title: string, clickOpenLightbox?: boolean, id?: number }) {
     // Image with 30px border radius with text under. Dead simple. Will have 3 in container.
     return (
-      <div className="card" onClick={clickOpenLightbox?()=>{setLbOpen(true)}:undefined}>
+      <div className="card" onClick={clickOpenLightbox?()=>{setIndexlb(id);}:undefined}>
         <img alt={title} src={image} width="250" height="180" />
         <span>{title}</span>
       </div>
@@ -92,6 +129,34 @@ export default function Home() {
               <i className="fa-solid fa-caret-down"></i>
             </Link>
           </Centered>
+          <SmallCentered id="details">
+            <h2>Wedding Details</h2>
+            <Gap />
+            <span style={{ textAlign: 'center' }}>Join us for a joyous celebration on</span>
+            <span style={{ textAlign: 'center' }}><b>Saturday, October 12th, 2024</b>, starting at 4:15 PM.</span>
+            <span style={{ textAlign: 'center' }}>Cocktail attire at the Marrakesh House - 6310 Tompkins Way. </span>
+            <span style={{ textAlign: 'center' }}>Dinner and dancing will follow.</span>
+            <span style={{ textAlign: 'center' }}>Please RSVP by September 12th to secure your spot.</span>
+            <Gap height={40}/>
+          </SmallCentered>
+          <SmallCentered id="parking">
+            <h2>Parking Info</h2>
+            <Gap />
+            <span style={{ textAlign: 'center' }}>This section is TBD and has no current content.</span>
+            <Gap height={40}/>
+          </SmallCentered>
+          <SmallCentered id="hotels">
+            <h2>Accomodations</h2>
+            <Gap />
+            <div className="buttons">
+              <Card title="Culver Hotel" image="/culver.jpg" />
+              <Card title="Pali Hotel" image="/pali.jpg" />
+            </div>
+            <Gap />
+            <span style={{textAlign:"center"}}>Friends and family members are invited to stay at the Culver Hotel.  This historic landmark building celebrates it's 100th anniversary this year having once hosted co-founder Charlie Chaplin and cast members of the Wizard of Oz. Recently renovated, it now enjoys the company of The Culver Steps, a new walking plaza with dining, coffee, bagels, and grocery all in downtown Culver City.  (Use our group code “CAT15” when booking.) <Link href="https://www.culverhotel.com/" target="_blank">https://www.culverhotel.com/</Link>.</span>
+            <Gap />
+            <span style={{textAlign:"center"}}>Other lodging options include The Pali Hotel next door <Link href="https://www.palisociety.com/hotels/culver-city" target="_blank">https://www.palisociety.com/hotels/culver-city</Link> or any one of many hotels and Airbnb options in the area.  The wedding venus is about a mile from the the hotel.  Note that the Friday evening before the wedding, a few of us will be sharing no-host drinks at 9PM in the Velvet Lounge of the Culver Hotel bar.</span>
+          </SmallCentered>
           <SmallCentered id="registry">
             <h2>Wedding Registry</h2>
             <Gap />
@@ -107,49 +172,51 @@ export default function Home() {
               Give Here
             </Link>
           </SmallCentered>
-          <SmallCentered id="details">
-            <h2>Wedding Details</h2>
-            <Gap />
-            <span style={{ textAlign: 'center' }}>Join us for a joyous celebration on</span>
-            <span style={{ textAlign: 'center' }}><b>Saturday, October 12th, 2024</b>, starting at 4:15 PM.</span>
-            <span style={{ textAlign: 'center' }}>Cocktail attire at the Marrakesh House - 6310 Tompkins Way. </span>
-            <span style={{ textAlign: 'center' }}>Dinner and dancing will follow.</span>
-            <span style={{ textAlign: 'center' }}>Please RSVP by September 12th to secure your spot.</span>
-            <Gap height={40}/>
-            <MapElement/>
-          </SmallCentered>
-          <SmallCentered id="hotels">
-            <h2>Accomodations</h2>
-            <Gap />
-            <div className="buttons">
-              <Card title="Culver Hotel" image="/culver.jpg" />
-              <Card title="Pali Hotel" image="/pali.jpg" />
-            </div>
-            <Gap />
-            <span style={{textAlign:"center"}}>Friends and family members are invited to stay at the Culver Hotel.  This historic landmark building celebrates it's 100th anniversary this year having once hosted co-founder Charlie Chaplin and cast members of the Wizard of Oz. Recently renovated, it now enjoys the company of The Culver Steps, a new walking plaza with dining, coffee, bagels, and grocery all in downtown Culver City.  (Use our group code “CAT15” when booking.) <Link href="https://www.culverhotel.com/" target="_blank">https://www.culverhotel.com/</Link>.</span>
-            <Gap />
-            <span style={{textAlign:"center"}}>Other lodging options include The Pali Hotel next door <Link href="https://www.palisociety.com/hotels/culver-city" target="_blank">https://www.palisociety.com/hotels/culver-city</Link> or any one of many hotels and Airbnb options in the area.  The wedding venus is about a mile from the the hotel.  Note that the Friday evening before the wedding, a few of us will be sharing no-host drinks at 9PM in the Velvet Lounge of the Culver Hotel bar.</span>
-          </SmallCentered>
           <SmallCentered id="photos">
             <h2>Photo Gallery</h2>
             <Gap />
             <div className="buttons">
-              {photosOne.map((photo, index) => <Card clickOpenLightbox={true} key={index} title={`Photo ${index + 1}`} image={photo} />)}
+              {photosOne.map((photo, index) => <Card clickOpenLightbox={true} key={index} id={index} title={``} image={photo} />)}
             </div>
+            <Gap />
             <div className="buttons">
-              {photosTwo.map((photo, index) => <Card clickOpenLightbox={true} key={index} title={`Photo ${index + 4}`} image={photo} />)}
+              {photosTwo.map((photo, index) => <Card clickOpenLightbox={true} key={index+3} id={index+3} title={``} image={photo} />)}
             </div>
+            <Gap />
             <div className="buttons">
-              {photosThree.map((photo, index) => <Card clickOpenLightbox={true} key={index} title={`Photo ${index + 7}`} image={photo} />)}
+              {photosThree.map((photo, index) => <Card clickOpenLightbox={true} key={index+6} id={index+6} title={``} image={photo} />)}
             </div>
+            <Gap />
+            <div className="buttons">
+              {photosFour.map((photo, index) => <Card clickOpenLightbox={true} key={index+9} id={index+9} title={``} image={photo} />)}
+            </div>
+            <Gap />
+            <div className="buttons">
+              {photosFive.map((photo, index) => <Card clickOpenLightbox={true} key={index+12} id={index+12} title={``} image={photo} />)}
+            </div>
+            <Gap />
+            <div className="buttons">
+              {photosSix.map((photo, index) => <Card clickOpenLightbox={true} key={index+15} id={index+15} title={``} image={photo} />)}
+            </div>
+            <Gap />
+            <div className="buttons">
+              {photosSeven.map((photo, index) => <Card clickOpenLightbox={true} key={index+18} id={index+18} title={``} image={photo} />)}
+            </div>
+            <Gap />
+            <div className="buttons">
+              {photosEight.map((photo, index) => <Card clickOpenLightbox={true} key={index+21} id={index+21} title={``} image={photo} />)}
+            </div>
+            <Gap />
+
           </SmallCentered>
         </div>
       </div>
     </CssVarsProvider>
     <Lightbox
-        open={lbOpen}
-        close={() => setLbOpen(false)}
-        slides={photosOne.concat(photosTwo).concat(photosThree).map((photo, index) => ({ src: photo, caption: `Photo ${index + 1}` }))}
+        open={indexlb >= 0}
+        close={() => setIndexlb(-1)}
+        index={indexlb}
+        slides={photosOne.concat(photosTwo).concat(photosThree).concat(photosFour).concat(photosFive).concat(photosSix).concat(photosSeven).concat(photosEight).map((photo, index) => ({ src: photo, caption: `Photo ${index + 1}` }))}
       />
     </>
   );
