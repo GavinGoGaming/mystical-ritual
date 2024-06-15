@@ -1,7 +1,7 @@
 'use client';
 import Image from "next/image";
 import { Button, CssVarsProvider, Input, ThemeProvider } from "@mui/joy";
-import { useState, ReactNode, useMemo } from "react";
+import { useState, ReactNode, useMemo, useEffect } from "react";
 import Link from "next/link";
 import { CoordinateRegion, Marker, Map } from "mapkit-react";
 import Lightbox from "yet-another-react-lightbox";
@@ -92,7 +92,7 @@ export default function Home() {
     )
   }
 
-  useState(() => {
+  useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
     const myParam = urlParams.get('debugging-mode');
     if (myParam === 'true') {
