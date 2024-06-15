@@ -1,6 +1,6 @@
 'use client';
 import Image from "next/image";
-import { Button, CssVarsProvider, ThemeProvider } from "@mui/joy";
+import { Button, CssVarsProvider, Input, ThemeProvider } from "@mui/joy";
 import { useState, ReactNode, useMemo } from "react";
 import Link from "next/link";
 import { CoordinateRegion, Marker, Map } from "mapkit-react";
@@ -73,6 +73,7 @@ function Icon({ icon }: { icon: string }) {
 export default function Home() {
 
   const [indexlb, setIndexlb] = useState(-1);
+  const [dbgEditColors, showDebugEditColors] = useState(false);
 
   function closeMenu() {
     document.querySelector('.menu')?.classList.remove('open');
@@ -80,24 +81,58 @@ export default function Home() {
   function Card({ image, title, clickOpenLightbox=false, id=-1 }: { image: string, title: string, clickOpenLightbox?: boolean, id?: number }) {
     // Image with 30px border radius with text under. Dead simple. Will have 3 in container.
     return (
-      <div className="card" onClick={clickOpenLightbox?()=>{setIndexlb(id);}:undefined}>
-        <img alt={title} src={image} width="250" height="180" />
-        <span>{title}</span>
+      <div onClick={clickOpenLightbox?()=>{setIndexlb(id);}:undefined} className="card card-col">
+        {clickOpenLightbox ? <>
+            <div className="c-col img" style={{backgroundImage:`url("${image}")`}}>
+
+            </div>
+        </> : <img alt={title} src={image} width={250} height={180} className="img" />}
+        {title ? <span>{title}</span> : undefined}
       </div>
     )
   }
+
+  useState(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const myParam = urlParams.get('debugging-mode');
+    if (myParam === 'true') {
+      showDebugEditColors(true);
+    }
+  }, []);
+
   return (
     <>
     <CssVarsProvider defaultMode="light">
+      <div className="debugging" style={{display:`${dbgEditColors?'block':'none'}`,zIndex:'100',fontFamily:'Inter, Helvetica, Arial',background:"#222",color:"white",position:'absolute',width:'320px',height:'200px',top:'10px',left:'10px',border:'1px solid white',borderRadius:'15px'}}>
+        <div style={{width:'100%',height:'100%',position:'relative',padding:'10px'}}>
+          <div style={{display:'flex'}}>
+            <span style={{fontSize:'12px',color:'white'}}>background: </span>
+            <Input type={'color'} defaultValue={`#EBE1CD`} component={'span'} onChange={(e)=>{document.documentElement.style.setProperty('--bg',e.target.value)}} />
+          </div>
+          <div style={{display:'flex'}}>
+            <span style={{fontSize:'12px',color:'white'}}>foreground (body): </span>
+            <Input type={'color'} defaultValue={`#000`} component={'span'} onChange={(e)=>{document.documentElement.style.setProperty('color',e.target.value)}} />
+          </div>
+          <div style={{display:'flex'}}>
+            <span style={{fontSize:'12px',color:'white'}}>foreground (spans): </span>
+            <Input type={'color'} defaultValue={`#402718`} component={'span'} onChange={(e)=>{document.documentElement.style.setProperty('--brown',e.target.value)}} />
+          </div>
+          <p style={{position:'absolute',bottom:'2px',left:'8px',fontSize:'12px'}}>gavin's put-anywhere-color-debug-tool - ver. 1.0 (2022)</p>
+        </div>
+      </div>
+
+
       <div className="menu-button" onClick={()=>{document.querySelector('.menu')?.classList.toggle('open')}}>
         <i className="fa-solid fa-bars"></i>
       </div>
       <div className="menu">
         <div className="menu-items">
-          <Link href="#title" onClick={closeMenu}><Icon icon="home"/> Home</Link>
-          <Link href="#registry" onClick={closeMenu}><Icon icon="honey-pot"/> Registry</Link>
+          <Link href="#home" onClick={closeMenu}><Icon icon="home"/> Home</Link>
           <Link href="#details" onClick={closeMenu}><Icon icon="memo-pad"/> Details</Link>
+          <Link href="#parking" onClick={closeMenu}><Icon icon="car"/> Parking</Link>
           <Link href="#hotels" onClick={closeMenu}><Icon icon="hotel"/> Accomodations</Link>
+          <Link href="#registry" onClick={closeMenu}><Icon icon="honey-pot"/> Registry</Link>
+          <Link href="#photos" onClick={closeMenu}><Icon icon="camera-polaroid"/> Photo Gallery</Link>
         </div>
       </div>
       <div className="split">
@@ -105,7 +140,7 @@ export default function Home() {
           <div className="image"></div>
         </div>
         <div className="split-right">
-          <Centered id="title">
+          <Centered id="home">
             <img src="/cornerpattern.png" style={{position:'absolute',top:-20,right:-20,width:'50%'}} alt="" />
             <img src="/cornerpattern.png" style={{position:'absolute',top:-20,left:-20,width:'50%',transform:'scaleX(-1)'}} alt="" />
             <span>The honor of your presence is</span>
@@ -124,7 +159,7 @@ export default function Home() {
               </Link>
             </div>
             <Gap height={30} />
-            <Link href="#registry" style={{cursor:'pointer',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',textDecoration:'none'}}>
+            <Link href="#details" style={{cursor:'pointer',display:'flex',flexDirection:'column',alignItems:'center',justifyContent:'center',textDecoration:'none'}}>
               <span style={{fontSize:'16px'}}>See More</span>
               <i className="fa-solid fa-caret-down"></i>
             </Link>
@@ -175,39 +210,38 @@ export default function Home() {
           <SmallCentered id="photos">
             <h2>Photo Gallery</h2>
             <Gap />
-            <div className="buttons">
+            <div className="buttons b-cards">
               {photosOne.map((photo, index) => <Card clickOpenLightbox={true} key={index} id={index} title={``} image={photo} />)}
             </div>
             <Gap />
-            <div className="buttons">
+            <div className="buttons b-cards">
               {photosTwo.map((photo, index) => <Card clickOpenLightbox={true} key={index+3} id={index+3} title={``} image={photo} />)}
             </div>
-            <Gap />
-            <div className="buttons">
+            <Gap /> 
+            <div className="buttons b-cards">
               {photosThree.map((photo, index) => <Card clickOpenLightbox={true} key={index+6} id={index+6} title={``} image={photo} />)}
             </div>
             <Gap />
-            <div className="buttons">
+            <div className="buttons b-cards">
               {photosFour.map((photo, index) => <Card clickOpenLightbox={true} key={index+9} id={index+9} title={``} image={photo} />)}
             </div>
             <Gap />
-            <div className="buttons">
+            <div className="buttons b-cards">
               {photosFive.map((photo, index) => <Card clickOpenLightbox={true} key={index+12} id={index+12} title={``} image={photo} />)}
             </div>
             <Gap />
-            <div className="buttons">
+            <div className="buttons b-cards">
               {photosSix.map((photo, index) => <Card clickOpenLightbox={true} key={index+15} id={index+15} title={``} image={photo} />)}
             </div>
             <Gap />
-            <div className="buttons">
+            <div className="buttons b-cards">
               {photosSeven.map((photo, index) => <Card clickOpenLightbox={true} key={index+18} id={index+18} title={``} image={photo} />)}
             </div>
             <Gap />
-            <div className="buttons">
+            <div className="buttons b-cards">
               {photosEight.map((photo, index) => <Card clickOpenLightbox={true} key={index+21} id={index+21} title={``} image={photo} />)}
             </div>
             <Gap />
-
           </SmallCentered>
         </div>
       </div>

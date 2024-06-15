@@ -95,6 +95,20 @@ b {
   overflow-y: scroll;
   overflow-x: hidden;
 }
+.buttons.b-cards {
+  width: 100%;
+  margin-left: 20px;
+}
+.card-col {
+  width: 30%;
+  height: auto;
+  aspect-ratio: 1;
+}
+.c-col {
+  aspect-ratio: 1;
+  background-size: cover;
+  background-position: 50%;
+}
 
 .click {
   cursor: pointer;
@@ -111,7 +125,7 @@ b {
   display: flex;
   flex-direction: column;
 }
-.card > img {
+.card > .img {
   border-radius: 15px;
 }
 .card > span {
