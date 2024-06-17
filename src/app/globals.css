@@ -15,7 +15,7 @@
 html, body {
   color: black;
   background: var(--bg);
-  height: 100vh;
+  max-height: 100vh;
   scroll-behavior: smooth !important;
   overflow-x: hidden;
 }
