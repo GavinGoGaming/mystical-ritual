@@ -7,8 +7,8 @@
   src: url(/lansbury.ttf);
 }
 :root {
-  --brown: #402718;
-  --bg: #EBE1CD;
+  --brown: #894820;
+  --bg: #F7D9A1;
   --menu-size: 300px;
   --menu-size-negative: calc(var(--menu-size) * -1);
 }
@@ -28,6 +28,7 @@ b {
   }
   100% {
     right: var(--menu-size-negative);
+    display: none;
   }
 }
 @keyframes opening {
@@ -97,7 +98,9 @@ b {
 }
 .buttons.b-cards {
   width: 100%;
-  margin-left: 20px;
+}
+.buttons > .card-col:first-of-type {
+  margin-left: 10px;
 }
 .card-col {
   width: 30%;
@@ -138,8 +141,13 @@ b {
   transition: all 0.25s;
 }
 .click:hover {
-  background: var(--brown);
+  background: #72b89f;
   color: white;
+  border: 1px solid white;
+}
+
+* {
+  scroll-behavior: smooth !important;
 }
 
 span {
@@ -183,6 +191,7 @@ a:not(.click) {
 }
 .menu.open {
   animation: opening 0.25s forwards;
+  display: block;
 }
 .menu:not(.open) {
   animation: closing 0.25s forwards;
@@ -217,5 +226,11 @@ a:not(.click) {
     background-image: url(/wide.jpg);
     height: 30vh;
   }
-
+  span {
+    font-size: 1.25rem;
+    max-width: 100%;
+  }
+  #photos {
+    width: 100%;
+  }
 }
