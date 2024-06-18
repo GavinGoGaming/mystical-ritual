@@ -202,7 +202,7 @@ export default function Home() {
               </div>
               <Gap />
               <span style={{ textAlign: 'center' }}>
-                We recommend flying into<br/><span style={{ textAlign: 'center' }}>Los Angeles International Airport (LAX).</span>
+                We recommend flying into<br /><span style={{ textAlign: 'center' }}>Los Angeles International Airport (LAX).</span>
               </span>
               <br />
               <span style={{ textAlign: 'center' }}>
@@ -295,9 +295,11 @@ export default function Home() {
               <span style={{ textAlign: 'center' }}>No.</span>
               <br />
 
-              <span style={{ textAlign: 'center' }}><b>What is the after-party?</b></span>
-              <span style={{ textAlign: 'center' }}>See your separate invitation for more information or check <a href="http://clubfez.com/">clubfez.com</a>. The afterparty is designed to include more of our local friends since space is limited at the wedding. It will be 21 and over.</span>
+              <span style={{ textAlign: 'center' }}><b>What is Club-Fez "Mystical Ritual"?</b></span>
+              <span style={{ textAlign: 'center' }}>Club Fez is the name we use for special parties at Marrakesh House. In this case for an after-party immediately after our reception designed for more of our local friends since space is limited at the wedding.</span>
+              <span style={{ textAlign: 'center' }}>Club Fez will start as some guests depart and others arrive in the 9 o'clock hour. If you wish to attend, please RSVP separately at <a href="http://clubfez.com/">clubfez.com</a> (also by September 12th) so we can get an accurate headcount. Club Fez is 21 and over only.</span>
               <br />
+
 
               <span style={{ textAlign: 'center' }}><b>Whom should I contact with questions?</b></span>
               <span style={{ textAlign: 'center' }}>Please email us at <a href="mailto:chris@papercutfilms.com">chris@papercutfilms.com</a> or <a href="mailto:wktahara@gmail.com">wktahara@gmail.com</a>.</span>
