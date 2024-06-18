@@ -19,6 +19,21 @@ html, body {
   scroll-behavior: smooth !important;
   overflow-x: hidden;
 }
+/* width */
+::-webkit-scrollbar {
+  width: 10px;
+}
+ 
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #F1AA42;
+  border-radius: 0px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #cc8c2b; 
+}
 b {
   font-weight: 600;
 }
@@ -61,6 +76,7 @@ b {
 }
 .section {
   position: relative;
+  max-width: 100%;
 }
 .menu-button {
   color: var(--brown);
@@ -207,6 +223,9 @@ a:not(.click) {
 }
 @media only screen and (max-width: 750px) {
   /* split left is now on top and not sticky image */
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
   .split {
     flex-direction: column;
     display: block;
