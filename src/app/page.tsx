@@ -212,9 +212,14 @@ export default function Home() {
                 <a href="https://www.culverhotel.com/">https://www.culverhotel.com/</a>
               </span>
               <br />
-              <span style={{ textAlign: 'center' }}>
-                An additional option is The Pali Hotel, which is located a few steps away from The Culver Hotel.
-                <a href="https://www.palisociety.com/hotels/culver-city">https://www.palisociety.com/hotels/culver-city</a>
+              <span style={{ textAlign: 'center',width:'100%' }}>
+                An additional option is The <a href="https://www.palisociety.com/hotels/culver-city" target="_blank">Pali Hotel</a>, which is located a few steps away from The Culver Hotel. You can book a room at the Pali Hotel using our wedding rate code (MYSTICALRITUAL) by using the button below.
+
+                <div className="buttons" style={{width:'100%', justifyContent:"center"}}>
+                  <Link className="click" href="https://be.synxis.com/?Hotel=4253&Chain=10634&config=DIRECTRATE&arrive=2024-10-11&depart=2024-10-13&adult=2&child=0&promo=MYSTICALRITUAL" target="_blank">
+                    Book Now
+                  </Link>
+                </div>
               </span>
               <br />
               <span style={{ textAlign: 'center' }}>
