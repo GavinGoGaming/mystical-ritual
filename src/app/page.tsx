@@ -281,7 +281,7 @@ export default function Home() {
               <br />
 
               <span style={{ textAlign: 'center' }}><b>What kind of shoes should/shouldn't I wear?</b></span>
-              <span style={{ textAlign: 'center' }}>Stiletto heels not recommended as the event will be mostly outside! Wear something comfortable so your feet will be happy especially if you’re walking up the hill to the house.</span>
+              <span style={{ textAlign: 'center' }}>Shoes with delicate heels strongly not recommended due to uneven slate floors and decomposed granite in our yard.<br/>Flats are best; wedges or platforms may be ok. Please wear something comfortable so your feet will be happy for the event, especially if you may be walking up & down Hetzler Road to & from the venue.</span>
               <br />
 
               <span style={{ textAlign: 'center' }}><b>Is there a smoking area?</b></span>
