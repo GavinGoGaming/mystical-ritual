@@ -305,6 +305,10 @@ export default function Home() {
               <span style={{ textAlign: 'center' }}>Club Fez will start as some guests depart and others arrive in the 9 o'clock hour. If you wish to attend, please RSVP separately at <a href="http://clubfez.com/">clubfez.com</a> (also by September 12th) so we can get an accurate headcount. Club Fez is 21 and over only.</span>
               <br />
 
+              <span style={{ textAlign: 'center' }}><b>Ceremony Note</b></span>
+              <span style={{ textAlign: 'center' }}>For our brief ceremony we hope everyone will help us create a quiet sacred space.  It will happen in our home’s courtyard with mostly standing room and only few seats for those who really need it (please let us know in advance). We’ll also have overflow space (with seating) in nearby area.</span>
+              <span style={{ textAlign: 'center' }}>Please no photographs or videos for this part of the wedding so everyone can be very present and enjoy the moment with us. (We will have a professional photographer.)</span>
+              <br />
 
               <span style={{ textAlign: 'center' }}><b>Whom should I contact with questions?</b></span>
               <span style={{ textAlign: 'center' }}>Please email us at <a href="mailto:chris@papercutfilms.com">chris@papercutfilms.com</a> or <a href="mailto:wktahara@gmail.com">wktahara@gmail.com</a>.</span>
