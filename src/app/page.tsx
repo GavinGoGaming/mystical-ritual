@@ -253,7 +253,7 @@ export default function Home() {
               <br />
 
               <span style={{ textAlign: 'center' }}><b>How should I get there?</b></span>
-              <span style={{ textAlign: 'center' }}>Rideshare to our home (the venue) is highly recommended. We have arranged a shuttle for those parking on Jefferson Boulevard (about 500 yards down the hill from our house). The shuttle will run from 3PM to 11PM from the roundabout at the entrance to Baldwin Hills Scenic Overlook State Park. This is just at start of Hetzler Road off of Jefferson Blvd and it will make return trips to the house. Please, no parking at the house, on Tompkins Way, or on Hetzler Road.</span>
+              <span style={{ textAlign: 'center' }}>Rideshare to our home (the venue) is highly recommended - please be sure to arrive between 2:45-3:30pm.  We have arranged a shuttle for those parking on Jefferson Boulevard (about 500 yards down the hill from our house). The shuttle will run from 2:45-11pm from the roundabout at the entrance to Baldwin Hills Scenic Overlook State Park. This is just at start of Hetzler Road off of Jefferson Blvd and it will make return trips to the house. Please, no parking at the house, on Tompkins Way, or on Hetzler Road.</span>
               <br />
 
               <span style={{ textAlign: 'center' }}><b>What will the weather be like?</b></span>
@@ -269,7 +269,7 @@ export default function Home() {
               <br />
 
               <span style={{ textAlign: 'center' }}><b>Is the wedding indoors or outdoors?</b></span>
-              <span style={{ textAlign: 'center' }}>Most of the wedding will take place outdoors in our yard. However there will be access to portions of the house and we'll arrange tents if rain is expected. Dancing will be in the central courtyard of our house.</span>
+              <span style={{ textAlign: 'center' }}>Most of the wedding will take place outdoors on our grounds. Portions of the interior of the house will open at 9pm for those of you staying for Club Fez. (Please RSVP separately for this at ClubFez.com)</span>
               <br />
 
               <span style={{ textAlign: 'center' }}><b>If I'm coming in from out of town, where should I stay?</b></span>
@@ -285,7 +285,7 @@ export default function Home() {
               <br />
 
               <span style={{ textAlign: 'center' }}><b>Is there a smoking area?</b></span>
-              <span style={{ textAlign: 'center' }}>If you choose to smoke, please only do so on the culdesac in front of house. Ashtrays will be available around front door.</span>
+              <span style={{ textAlign: 'center' }}>If you choose to smoke cigarettes, please only do so on the cul de sac on the street in front of our house. A little blue covered ashtray will be available on the pillar by our mailbox.</span>
               <br />
 
               <span style={{ textAlign: 'center' }}><b>What time will the reception end?</b></span>
