@@ -1,6 +1,6 @@
 'use client';
 import Image from "next/image";
-import { Button, CssVarsProvider, Input, ThemeProvider } from "@mui/joy";
+import { Button, CssVarsProvider, Input, Modal, ModalClose, ModalDialog, Sheet, ThemeProvider, Typography } from "@mui/joy";
 import { useState, ReactNode, useMemo, useEffect } from "react";
 import Link from "next/link";
 import { CoordinateRegion, Marker, Map } from "mapkit-react";
@@ -108,9 +108,40 @@ export default function Home() {
     }
   }, []);
 
+  const [initModalOpen, setInitModalOpen] = useState(true);
+
   return (
     <>
       <CssVarsProvider defaultMode="light">
+        <Modal open={initModalOpen} onClose={() => { setInitModalOpen(false) }}
+          sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+          <ModalDialog
+            sx={{ maxWidth: 500, borderRadius: 'md', p: 3, boxShadow: 'lg', background: '#F7D8A1', borderColor: '#E7C28E', borderWidth: '2px' }}
+          >
+            <ModalClose variant="plain" sx={{
+              m: 1, '&:hover': {
+                background: '#E7C28E',
+              }
+            }} />
+            <Typography
+              fontFamily={'Lansbury'}
+              fontSize={'2.5rem'}
+              fontWeight={'500'}
+              sx={{ fontWeight: 'lg', mb: 1 }}
+            >
+              Mystical Ritual
+            </Typography>
+            <Typography fontFamily={`'__Alegreya_Sans_SC_1f562d', '__Alegreya_Sans_SC_Fallback_1f562d'`} style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+              Hi Everyone!
+              <br/><br/>
+              Just a week to go til our wedding on Saturday, October 12! We have a quick update with important information for you. Please click here for details.<br/>
+              <div style={{height:'10px'}}></div>
+              <Link href="#complete" className="click" onClick={()=>{setInitModalOpen(false)}} style={{ cursor: 'pointer', display: 'inline-flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textDecoration: 'none', width: '140px' }}>
+                <span style={{ fontSize: '16px' }}>Details</span>
+              </Link>
+            </Typography>
+          </ModalDialog>
+        </Modal>
         <div className="debugging" style={{ display: `${dbgEditColors ? 'block' : 'none'}`, zIndex: '100', fontFamily: 'Inter, Helvetica, Arial', background: "#222", color: "white", position: 'absolute', width: '320px', height: '200px', top: '10px', left: '10px', border: '1px solid white', borderRadius: '15px' }}>
           <div style={{ width: '100%', height: '100%', position: 'relative', padding: '10px' }}>
             <div style={{ display: 'flex' }}>
@@ -138,6 +169,7 @@ export default function Home() {
             <Link href="#home" onClick={closeMenu}><Icon icon="home" /> Home</Link>
             <Link href="#details" onClick={closeMenu}><Icon icon="memo-pad" /> Details</Link>
             <Link href="#schedule" onClick={closeMenu}><Icon icon="clock" /> Schedule</Link>
+            <Link href="#complete" onClick={closeMenu}><Icon icon="memo-pad" /> Complete Info</Link>
             <Link href="#travel" onClick={closeMenu}><Icon icon="plane" /> Travel</Link>
             <Link href="#faq" onClick={closeMenu}><Icon icon="comment-question" /> FAQ</Link>
             <Link href="#registry" onClick={closeMenu}><Icon icon="honey-pot" /> Registry</Link>
@@ -193,6 +225,62 @@ export default function Home() {
               <span style={{ textAlign: 'center' }}>Cocktails, buffet dinner and reception til 9PM</span>
               <Gap height={40} />
             </SmallCentered>
+            <SmallCentered id="complete">
+              <h2>Complete Details</h2>
+              <Gap />
+              <span style={{ textAlign: 'center' }}><b>ARRIVALS</b></span>
+              <span style={{ textAlign: 'center' }}>We encourage you to arrive between 3PM and 3:30PM so everyone has time to check their coats, pick up a program, meet and mingle with other guests, and maybe even have a drink before the ceremony starts at 4:15PM.</span>
+              <br />
+
+              <span style={{ textAlign: 'center' }}><b>PARKING AND RIDESHARE</b></span>
+              <span style={{ textAlign: 'center' }}>Ride-sharing is encouraged. You can rockstar to the address 6310 Tompkins Way for a drop off. Remember there is no parking available at house. If you want a backup plan to Uber or Lyft, you may want to sign up for “Waymo” which now offers driverless taxi service in our area. For those parking, we suggest Jefferson Boulevard near Hetzler Road. Greg will be driving our 12 person van shuttle up Hetzler Road starting at 2:45PM from Jefferson Blvd. It’s pickup place is at the entrance to Baldwin Hills Scenic Overlook State Park. The shuttle will also run from 8PM till 11:30. For your safety, use crosswalks if crossing Jefferson Boulevard.</span>
+              <br />
+
+              <span style={{ textAlign: 'center' }}><b>WEATHER</b></span>
+              <span style={{ textAlign: 'center' }}>Culver City forecast is between 61° and 75° so you’ll want to have something warm, especially after sunset at 6:30PM.</span>
+              <br />
+
+              <span style={{ textAlign: 'center' }}><b>SHOES</b></span>
+              <span style={{ textAlign: 'center' }}>Easy to walk in shoes are recommended. The wedding is mostly outside so you’ll want shoes that are comfortable on decomposed granite walkways. Chris will be wearing sneakers (just saying).</span>
+              <br />
+
+              <span style={{ textAlign: 'center' }}><b>WEDDING DRESS CODE</b></span>
+              <span style={{ textAlign: 'center' }}>Semi-formal/cocktail. Be sure to bring a coat if it gets cool. For those staying for the “Club Fez" after-party, a costume change is totally optional (see below).</span>
+              <br />
+
+              <span style={{ textAlign: 'center' }}><b>COAT CHECK</b></span>
+              <span style={{ textAlign: 'center' }}>Coat-check will be open when you arrive and stay open til 10PM (at which point it will switch to self-serve). We can’t be responsible for valuables, so please keep those with you.</span>
+              <br />
+
+              <span style={{ textAlign: 'center' }}><b>CEREMONY/SEAT REQUESTS</b></span>
+              <span style={{ textAlign: 'center' }}>Our Ceremony will start around 4:15PM in our courtyard and last about 20 minutes. To accommodate everyone, most guests will be standing but we will have about 30 seats for those who need or request it. Please email our wedding planner, Rebecca Blake &lt;rblakedesign@gmail.com&gt; and we’ll do our best to accommodate.</span>
+              <br />
+
+              <span style={{ textAlign: 'center' }}><b>USHERS ARE YOUR FRIENDS</b></span>
+              <span style={{ textAlign: 'center' }}>Ushers and Volunteers are wearing gold ribbons or boutonnières, and they will help guide you through different parts of the wedding as they unfold. Please follow their guidance. The interior of house opens at 9PM. Your program will have a map with locations of restrooms.</span>
+              <br />
+
+              <span style={{ textAlign: 'center' }}><b>RESIDENTIAL NEIGHBORHOOD</b></span>
+              <span style={{ textAlign: 'center' }}>We share our cul-de-sac with our neighbors. Please be mindful of our neighbors and after 10PM keep voices down while on Tompkins Way.</span>
+              <br />
+
+              <span style={{ textAlign: 'center' }}><b>PHOTOGRAPHY</b></span>
+              <span style={{ textAlign: 'center' }}>3 friends (Onyay, John, and Brad) are handling professional photography and videography for us (and we’ll send you links eventually). Please refrain from photos during the ceremony. You are welcome to take your own photos the rest of the time but don’t post to public social media without checking with us first.</span>
+              <br />
+
+              <span style={{ textAlign: 'center' }}><b>DINNER</b></span>
+              <span style={{ textAlign: 'center' }}>Dinner starts around 5PM on long tables and will be served family style. We have name cards and seats for everyone. Ask about your table when you check-in. Our caterers will have all menu items and ingredients listed with options for vegetarian, gluten-free, and other dietary preferences/restrictions.</span>
+              <br />
+
+              <span style={{ textAlign: 'center' }}><b>DANCING</b></span>
+              <span style={{ textAlign: 'center' }}>Yes, with DJ Moni Vargas :-))</span>
+              <br />
+
+              <span style={{ textAlign: 'center' }}><b>AFTER-PARTY</b></span>
+              <span style={{ textAlign: 'center' }}>At about 8:30PM, we will begin our transition to "Club Fez presents 'Mystical Ritual'”. The interior of the house will open (except family areas), linking together indoor and outdoor spaces. Many friends will be joining us who weren’t with us during the wedding. Your wedding outfit is fine or feel free to make a costume change (the powder room or the Airstream can offer you more privacy) befitting our ‘wild/ enchanting' bohemian theme. Our Club Fez parties are mostly all-volunteer so ask anyone wearing a gold volunteer ribbon if you have any concerns, questions, or can help out. (Please don’t ask Chris and Wendy). Please RSVP at clubfez.com if you haven’t already to keep updated. Coat check goes into self-serve mode at 10PM and shuttle down Hetzler Road runs till 11:30.</span>
+              <br />
+
+            </SmallCentered>
             <SmallCentered id="travel">
               <h2>Travel</h2>
               <Gap />
@@ -212,10 +300,10 @@ export default function Home() {
                 <a href="https://www.culverhotel.com/">https://www.culverhotel.com/</a>
               </span>
               <br />
-              <span style={{ textAlign: 'center',width:'100%' }}>
+              <span style={{ textAlign: 'center', width: '100%' }}>
                 An additional option is The <a href="https://www.palisociety.com/hotels/culver-city" target="_blank">Pali Hotel</a>, which is located a few steps away from The Culver Hotel. You can book a room at the Pali Hotel using our wedding rate code (MYSTICALRITUAL) by using the button below.
 
-                <div className="buttons" style={{width:'100%', justifyContent:"center"}}>
+                <div className="buttons" style={{ width: '100%', justifyContent: "center" }}>
                   <Link className="click" href="https://be.synxis.com/?Hotel=4253&Chain=10634&config=DIRECTRATE&arrive=2024-10-11&depart=2024-10-13&adult=2&child=0&promo=MYSTICALRITUAL" target="_blank">
                     Book Now
                   </Link>
@@ -281,7 +369,7 @@ export default function Home() {
               <br />
 
               <span style={{ textAlign: 'center' }}><b>What kind of shoes should/shouldn't I wear?</b></span>
-              <span style={{ textAlign: 'center' }}>Shoes with delicate heels strongly not recommended due to uneven slate floors and decomposed granite in our yard.<br/>Flats are best; wedges or platforms may be ok. Please wear something comfortable so your feet will be happy for the event, especially if you may be walking up & down Hetzler Road to & from the venue.</span>
+              <span style={{ textAlign: 'center' }}>Shoes with delicate heels strongly not recommended due to uneven slate floors and decomposed granite in our yard.<br />Flats are best; wedges or platforms may be ok. Please wear something comfortable so your feet will be happy for the event, especially if you may be walking up & down Hetzler Road to & from the venue.</span>
               <br />
 
               <span style={{ textAlign: 'center' }}><b>Is there a smoking area?</b></span>
