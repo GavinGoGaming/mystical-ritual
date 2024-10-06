@@ -244,7 +244,7 @@ export default function Home() {
               <br />
 
               <span style={{ textAlign: 'center' }}><b>WEDDING DRESS CODE</b></span>
-              <span style={{ textAlign: 'center' }}>Semi-formal/cocktail. Be sure to bring a coat if it gets cool. For those staying for the “Club Fez" after-party, a costume change is totally optional (see below).</span>
+              <span style={{ textAlign: 'center' }}>Semi-formal/cocktail. Be sure to bring a coat if it gets cool. For those staying for the “Club Fez" after-party, a costume change is totally optional. A few ideas below or click back to the Club Fez RSVP page or <a href="https://clubfez.com/mystical-ritual" rel="_blank">Club Fez Mystical Ritual event page</a>.</span>
               <br />
 
               <span style={{ textAlign: 'center' }}><b>COAT CHECK</b></span>
