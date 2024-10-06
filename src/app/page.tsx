@@ -214,7 +214,6 @@ export default function Home() {
               <span style={{ textAlign: 'center' }}>6310 Tompkins Way</span>
               <span style={{ textAlign: 'center' }}>Culver City, CA</span><br />
               <span style={{ textAlign: 'center' }}>Dinner and dancing will follow.</span>
-              <span style={{ textAlign: 'center' }}>Please RSVP by September 12th to secure your spot.</span>
               <Gap height={40} />
             </SmallCentered>
             <SmallCentered id="schedule">
@@ -332,9 +331,6 @@ export default function Home() {
             <SmallCentered id="faq">
               <h2>F A Q</h2>
               <Gap />
-              <span style={{ textAlign: 'center' }}><b>When is the RSVP deadline?</b></span>
-              <span style={{ textAlign: 'center' }}>Please RSVP online by September 12th so we have an accurate headcount.</span>
-              <br />
 
               <span style={{ textAlign: 'center' }}><b>Can I bring a date or children?</b></span>
               <span style={{ textAlign: 'center' }}>We love everyone but have limited space availability. Please check with us.</span>
