@@ -131,7 +131,7 @@ export default function Home() {
             >
               Mystical Ritual
             </Typography>
-            <Typography fontFamily={`'__Alegreya_Sans_SC_1f562d', '__Alegreya_Sans_SC_Fallback_1f562d'`} style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
+            <Typography fontFamily={`'__Afacad_dce3e5'`} style={{display:'flex',flexDirection:'column',alignItems:'center'}}>
               Hi Everyone!
               <br/><br/>
               Just a week to go til our wedding on Saturday, October 12! We have a quick update with important information for you. Please click here for details.<br/>
@@ -253,7 +253,7 @@ export default function Home() {
               <br />
 
               <span style={{ textAlign: 'center' }}><b>CEREMONY/SEAT REQUESTS</b></span>
-              <span style={{ textAlign: 'center' }}>Our Ceremony will start around 4:15PM in our courtyard and last about 20 minutes. To accommodate everyone, most guests will be standing but we will have about 30 seats for those who need or request it. Please email our wedding planner, Rebecca Blake &lt;rblakedesign@gmail.com&gt; and we’ll do our best to accommodate.</span>
+              <span style={{ textAlign: 'center' }}>Our Ceremony will start around 4:15PM in our courtyard and last about 20 minutes. To accommodate everyone, most guests will be standing but we will have about 30 seats for those who need or request it. Please email our wedding planner, <a href="mailto:rblakedesign@gmail.com" rel="_new">Rebecca Blake</a> and we’ll do our best to accommodate.</span>
               <br />
 
               <span style={{ textAlign: 'center' }}><b>USHERS ARE YOUR FRIENDS</b></span>
@@ -277,7 +277,7 @@ export default function Home() {
               <br />
 
               <span style={{ textAlign: 'center' }}><b>AFTER-PARTY</b></span>
-              <span style={{ textAlign: 'center' }}>At about 8:30PM, we will begin our transition to "Club Fez presents 'Mystical Ritual'”. The interior of the house will open (except family areas), linking together indoor and outdoor spaces. Many friends will be joining us who weren’t with us during the wedding. Your wedding outfit is fine or feel free to make a costume change (the powder room or the Airstream can offer you more privacy) befitting our ‘wild/ enchanting' bohemian theme. Our Club Fez parties are mostly all-volunteer so ask anyone wearing a gold volunteer ribbon if you have any concerns, questions, or can help out. (Please don’t ask Chris and Wendy). Please RSVP at clubfez.com if you haven’t already to keep updated. Coat check goes into self-serve mode at 10PM and shuttle down Hetzler Road runs till 11:30.</span>
+              <span style={{ textAlign: 'center' }}>At about 8:30PM, we will begin our transition to "<a href="https://clubfez.com/mystical-ritual">Club Fez presents 'Mystical Ritual'</a>". The interior of the house will open (except family areas), linking together indoor and outdoor spaces. Many friends will be joining us who weren’t with us during the wedding. Your wedding outfit is fine or feel free to make a costume change (the powder room or the Airstream can offer you more privacy) befitting our ‘wild/ enchanting' bohemian theme. Our Club Fez parties are mostly all-volunteer so ask anyone wearing a gold volunteer ribbon if you have any concerns, questions, or can help out. (Please don’t ask Chris and Wendy). Please RSVP at clubfez.com if you haven’t already to keep updated. Coat check goes into self-serve mode at 10PM and shuttle down Hetzler Road runs till 11:30.</span>
               <br />
 
             </SmallCentered>

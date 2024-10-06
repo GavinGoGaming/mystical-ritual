@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Alegreya_Sans_SC } from "next/font/google";
+import { Afacad } from "next/font/google";
 import "./globals.css";
 
-const alegreya = Alegreya_Sans_SC({weight: "300", subsets:["latin"]});
+const alegreya = Afacad({weight: "400", subsets:["latin"]});
 
 export const metadata: Metadata = {
   title: "Mystical Ritual",
