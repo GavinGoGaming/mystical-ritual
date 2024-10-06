@@ -341,7 +341,7 @@ export default function Home() {
               <br />
 
               <span style={{ textAlign: 'center' }}><b>How should I get there?</b></span>
-              <span style={{ textAlign: 'center' }}>Rideshare to our home (the venue) is highly recommended - please be sure to arrive between 2:45-3:30pm.  We have arranged a shuttle for those parking on Jefferson Boulevard (about 500 yards down the hill from our house). The shuttle will run from 2:45-11pm from the roundabout at the entrance to Baldwin Hills Scenic Overlook State Park. This is just at start of Hetzler Road off of Jefferson Blvd and it will make return trips to the house. Please, no parking at the house, on Tompkins Way, or on Hetzler Road.</span>
+              <span style={{ textAlign: 'center' }}>Rideshare to our home (the venue) is highly recommended - please be sure to arrive between 3-3:30pm.  We have arranged a shuttle for those parking on Jefferson Boulevard (about 500 yards down the hill from our house). The shuttle will run from 2:45-11pm from the roundabout at the entrance to Baldwin Hills Scenic Overlook State Park. This is just at start of Hetzler Road off of Jefferson Blvd and it will make return trips to the house. Please, no parking at the house, on Tompkins Way, or on Hetzler Road.</span>
               <br />
 
               <span style={{ textAlign: 'center' }}><b>What will the weather be like?</b></span>
